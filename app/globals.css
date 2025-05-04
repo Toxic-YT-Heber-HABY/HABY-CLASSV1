@@ -1,0 +1,301 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Paleta oscura y neutra, sin tonos azules */
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 20%;
+    --primary-foreground: 0 0% 95%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 0 0% 18%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 28%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Estilos personalizados para las clases */
+.bg-class-blue,
+.border-class-blue {
+  background-color: #4285f4;
+  border-color: #4285f4;
+}
+
+.bg-class-green,
+.border-class-green {
+  background-color: #34a853;
+  border-color: #34a853;
+}
+
+.bg-class-yellow,
+.border-class-yellow {
+  background-color: #fbbc05;
+  border-color: #fbbc05;
+}
+
+.bg-class-red,
+.border-class-red {
+  background-color: #ea4335;
+  border-color: #ea4335;
+}
+
+.bg-class-purple,
+.border-class-purple {
+  background-color: #9c27b0;
+  border-color: #9c27b0;
+}
+
+.bg-class-teal,
+.border-class-teal {
+  background-color: #009688;
+  border-color: #009688;
+}
+
+/* Estilos para el fondo de las clases */
+.bg-class-blue\/10 {
+  background-color: rgba(66, 133, 244, 0.1);
+}
+
+.bg-class-green\/10 {
+  background-color: rgba(52, 168, 83, 0.1);
+}
+
+.bg-class-yellow\/10 {
+  background-color: rgba(251, 188, 5, 0.1);
+}
+
+.bg-class-red\/10 {
+  background-color: rgba(234, 67, 53, 0.1);
+}
+
+.bg-class-purple\/10 {
+  background-color: rgba(156, 39, 176, 0.1);
+}
+
+.bg-class-teal\/10 {
+  background-color: rgba(0, 150, 136, 0.1);
+}
+
+/* Estilos para los bordes de las clases */
+.border-class-blue\/20 {
+  border-color: rgba(66, 133, 244, 0.2);
+}
+
+.border-class-green\/20 {
+  border-color: rgba(52, 168, 83, 0.2);
+}
+
+.border-class-yellow\/20 {
+  border-color: rgba(251, 188, 5, 0.2);
+}
+
+.border-class-red\/20 {
+  border-color: rgba(234, 67, 53, 0.2);
+}
+
+.border-class-purple\/20 {
+  border-color: rgba(156, 39, 176, 0.2);
+}
+
+.border-class-teal\/20 {
+  border-color: rgba(0, 150, 136, 0.2);
+}
+
+/* Mejoras de diseño general */
+.card-hover-effect {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Animaciones suaves */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mejoras para la accesibilidad */
+.focus-visible:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Mejoras para el modo oscuro */
+.dark .dark-mode-text-shadow {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Mejoras de diseño para formularios */
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+.input-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--ring);
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+/* Mejoras para tarjetas y contenedores */
+.content-card {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .content-card {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+}
+
+/* Mejoras para botones */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius);
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background-color: var(--secondary);
+  color: var(--secondary-foreground);
+}
+
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+/* Mejoras para tipografía */
+.heading-1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.heading-2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 0.75rem;
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.text-small {
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
